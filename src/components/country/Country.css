@@ -5,3 +5,11 @@
   text-align: center;
   padding: 10px;
 }
+
+.image {
+  object-fit: cover;
+}
+
+.cardBG {
+  background-color: antiquewhite;
+}

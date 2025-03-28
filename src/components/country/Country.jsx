@@ -1,16 +1,26 @@
+import { useState } from "react";
 import "./Country.css";
 
 export default function Country({ country }) {
+  const [visit, setVisit] = useState(false);
   const handleVisit = () => {
-    console.log("Visited");
+    setVisit(!visit);
   };
   return (
     <>
-      <div className="card">
+      <div className={`card ${visit && "cardBG"}`}>
         <h3>Country Name : {country.name.common}</h3>
-        <img height={"200px"} width={"300px"} src={country.flags.png} alt="" />
+        <img
+          className="image"
+          height={"200px"}
+          width={"350px"}
+          src={country.flags.png}
+          alt=""
+        />
         <p>Population : {country.population}</p>
-        <button onClick={handleVisit}>Not Visited</button>
+        <button onClick={handleVisit}>
+          {visit ? "Visited" : "Not Visited"}
+        </button>
       </div>
     </>
   );
